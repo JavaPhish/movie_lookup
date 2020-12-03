@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-size: 4vw;
+}
+
+
+.lookup input[type=text] {
+  background-color: whitesmoke;
+  outline: none;
+
+  border-top-left-radius: .5vw;
+  border-bottom-left-radius: .5vw;
+
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+
+  width: 40%;
+  height: 48px;
+
+  font-size: 17px;
+}
+
+.lookup button {
+  border: none;
+
+  border-top-right-radius: .5vw;
+  border-bottom-right-radius: .5vw;
+  
+  background-color: #DCD1D6;
+  
+  cursor: pointer;
+  height: 50px;
+  width: 75px;
+}
+
+.lookup button .h6 {
+  justify-content: center;
+}
+
+.lookup  button:hover {
+  background-color: #96EDBB;
+}
