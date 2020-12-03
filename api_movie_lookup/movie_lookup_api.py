@@ -13,7 +13,7 @@ def search_movies():
     querystring = {"title": request.json['movie'],"type":"get-movies-by-title"}
 
     headers = {
-        'x-rapidapi-key': "0221aebcd3msh363781e70cd07ebp148bb9jsn9a8731204b28",
+        'x-rapidapi-key': "YOU NEED TO GET YOUR OWN API KEY.",
         'x-rapidapi-host': "movies-tvshows-data-imdb.p.rapidapi.com"
     }
     """
