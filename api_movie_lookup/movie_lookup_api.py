@@ -1,13 +1,89 @@
 #!/usr/bin/python3
 
-
+from tinydb import TinyDB, Query
 from flask import Flask, jsonify, request
 import requests
 
+"""
+    I was originally going to use some database server like MySQL or MongoDB but tinyDB is cool
+    and is simple enough to just be integrated directly into the API script
+
+    it also makes setup really simple for someone testing this out locally
+"""
+# initialize the app and also our 'database'
+db = TinyDB('ratings.json')
 app = Flask(__name__)
+
+
+@app.route('/ratings', methods=['POST'], strict_slashes=False)
+def get_ratings():
+    """ get_ratings
+         this route is used to populate each movie entry with
+         the pre-existing ratings data
+
+         for updating and changing like count, see routes 'dislike' and 'like'
+    """
+    q_id = Query()
+    response = request.json['imdb_id']
+
+    # IF it doesnt exist, create a blank one (Makes things easier on front end)
+    if (db.search(q_id.imdb_id == response) == []):
+        db.insert({'imdb_id': response, 'likes': 0, 'dislikes': 0})
+
+    # Search and return the first entry under that ID
+    return db.search(q_id.imdb_id == response)[0]
+
+
+@app.route('/like', methods=['POST'], strict_slashes=False)
+def like_movie():
+    """ like
+         This route updates the number of likes on an IMDB_ID entry
+         if the entry does not exist or has no rating, it creates
+         its own
+    """
+    q_id = Query()
+    response = request.json['imdb_id']
+
+    # If the value does not exist, create an entry for it
+    if (db.search(q_id.imdb_id == response) == []):
+        db.insert({'imdb_id': response, 'likes': 0, 'dislikes': 0})
+
+    # Increase the number of likes by 1
+    db.update({'likes': db.search(q_id.imdb_id == response)[0]['likes'] + 1}, q_id.imdb_id == response)
+
+    # Return the entry we just updated
+    return db.search(q_id.imdb_id == response)[0]
+
+@app.route('/dislike', methods=['POST'], strict_slashes=False)
+def dislike_movie():
+    """ dislike
+         This route updates the number of dislikes on an IMDB_ID entry
+         if the entry does not exist or has no rating, it creates
+         its own
+    """
+    q_id = Query()
+    response = request.json['imdb_id']
+
+    # If the value does not exist, create an entry for it
+    if (db.search(q_id.imdb_id == response) == []):
+        db.insert({'imdb_id': response, 'likes': 0, 'dislikes': 0})
+
+    # Increase the number of dislikes by 1
+    db.update({'dislikes': db.search(q_id.imdb_id == response)[0]['dislikes'] + 1}, q_id.imdb_id == response)
+
+    # Return the entry we just updated
+    return db.search(q_id.imdb_id == response)[0]
 
 @app.route('/search_movie', methods=['POST'], strict_slashes=False)
 def search_movies():
+    """
+        search_movies
+        This interacts with the IMDB api to find the 10 most relevent
+        movie titles, then using those IDs it gathers more information
+        for the front end to use. This is possible in REACTjs but its easier
+        in python to organize all the data and simplify to one API call on the
+        front end
+    """
 
     url = "https://movies-tvshows-data-imdb.p.rapidapi.com/"
     querystring = {"title": request.json['movie'],"type":"get-movies-by-title"}
