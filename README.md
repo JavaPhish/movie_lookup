@@ -27,3 +27,4 @@ $: npm start
 Navigate into the 'api_movie_lookup' folder and run the command 'python3 movie_lookup_api.py'. This creates a flask server running on port 6000 (Note that the react server is proxied to this port so changing it may cause issues between the two services)
 
 <h3>Database</h3>
+For the database it is a lightweight json based python package called 'tinydb', there is no server or service required to run it. Just ensure you have it installed.
