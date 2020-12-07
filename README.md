@@ -12,6 +12,9 @@ See steps below for setup.
 <li>tinydb</li>
 <li>Flask</li>
 
+<h4>REACTjs</h4>
+Ensure you have nodejs installed so you can run the REACTjs server with 'npm start'
+
 <h3>Front end (REACTjs server setup</h3>
 
 <h3>API (Flask server setup)</h3>
