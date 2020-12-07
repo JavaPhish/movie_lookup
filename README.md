@@ -22,6 +22,8 @@ On a separate terminal, navigate into the 'movie_lookup_react' folder and run th
 $: cd movie_lookup_react
 $: npm start
 </code>
+
 <h3>API (Flask server setup)</h3>
+Navigate into the 'api_movie_lookup' folder and run the command 'python3 movie_lookup_api.py'. This creates a flask server running on port 6000 (Note that the react server is proxied to this port so changing it may cause issues between the two services)
 
 <h3>Database</h3>
