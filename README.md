@@ -27,7 +27,7 @@ $: npm start
 Navigate into the 'api_movie_lookup' folder and run the command 'python3 movie_lookup_api.py'. This creates a flask server running on port 6000 (Note that the react server is proxied to this port so changing it may cause issues between the two services)
 
 <h3>NOTE</h3>
-This web application will not work if you do not replace line 92 of movie_lookup_api.py with a valid imdb api access key. You can register for them here, https://rapidapi.com/amrelrafie/api/movies-tvshows-data-imdb.
+<h5>This web application will not work</h5> if you do not replace line 92 of movie_lookup_api.py with a valid imdb api access key. You can register for them here, https://rapidapi.com/amrelrafie/api/movies-tvshows-data-imdb.
 
 <h3>Database</h3>
 For the database it is a lightweight json based python package called 'tinydb', there is no server or service required to run it. Just ensure you have it installed.
