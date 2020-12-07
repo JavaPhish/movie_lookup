@@ -116,7 +116,7 @@ def search_movies():
     movie_info = {}
     data = []
     """
-        Search up information on each ID and include it in a dictionary
+        Search up information on each ID and include it in a dictionary,
         key it by name
     """
     for m_id in movie_ids.values():
