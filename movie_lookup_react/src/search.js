@@ -30,7 +30,7 @@ export default class MovieLookup extends React.Component {
                 console.log(error)
             }) 
         const data = await response.json();
-        this.setState({movies: data, loaded: true})
+        this.setState({movies: data, loaded: true});
     }
 
     handleChange(event) {
