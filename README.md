@@ -7,6 +7,7 @@ There are 2 main components that add need to be running in order to bring movie 
 See steps below for setup.
 
 <h3>First setup your environment/installs</h3>
+<h4>This project was built in a linux environment</h4>
 <h4>Python packages required (installed with pip3)</h4>
 <li>requests</li>
 <li>tinydb</li>
