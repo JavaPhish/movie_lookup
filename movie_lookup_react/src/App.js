@@ -7,13 +7,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Movie Checker</h1>
+        <h1>Movie Lookup</h1>
       </header>
-
       <body>
         <MovieLookup />
       </body>
-
     </div>
   );
 }

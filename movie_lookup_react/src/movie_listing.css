@@ -3,4 +3,37 @@
     margin: 30px;
     border-radius: 5px;
     padding: 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+
+.directors {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+
+    width: 50%;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 25%;
+}
+
+.rating button {
+    border: none;
+    border-radius: 5px;
+  
+    background-color: gainsboro;
+}
+  
+.rating button:hover {
+    background-color: lightblue;
+    cursor: pointer;
 }
