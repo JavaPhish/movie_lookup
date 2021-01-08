@@ -16,7 +16,7 @@ See steps below for setup.
 Ensure you have nodejs installed so you can run the REACTjs server with 'npm start'
 
 <h3>Front end (REACTjs server setup</h3>
-<text>On a separate terminal, navigate into the 'movie_lookup_react' folder and run the command 'npm start'. This creates the REACTjs web server and runs it locally on 0.0.0.0:3000</text>
+<text>On a separate terminal, navigate into the 'movie_lookup_react' folder and run the command 'npm start' (Note if this is a clean install you need to run `npm install` to install necessary files). This creates the REACTjs web server and runs it locally on 0.0.0.0:3000</text>
 
 <code>
 $: cd movie_lookup_react
